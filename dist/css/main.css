@@ -56,7 +56,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("/dist/img/mypic.jpeg");
+      background: url("../img/mypic.jpeg");
       background-size: contain;
       border-radius: 50%;
       border: solid 3px #eece1a; }
@@ -75,7 +75,7 @@
   box-sizing: border-box; }
 
 body {
-  background: url(/dist/img/laptop.jpg);
+  background: url("../img/laptop.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-color: #444;
@@ -140,7 +140,8 @@ main {
 
 .about-info {
   display: grid;
-  grid-template-areas: "bioimage education education" "interests cources cources";
+  grid-template-areas: "bioimage education education"
+ "interests cources cources";
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   font-size: 1.5rem;
@@ -249,7 +250,10 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: "bioimage" "education" "cources" "interests";
+    grid-template-areas: "bioimage"
+ "education"
+ "cources"
+ "interests";
     grid-template-columns: 1fr; }
     .about-info .bio-image {
       margin: auto; }
