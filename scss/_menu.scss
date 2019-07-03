@@ -1,0 +1,110 @@
+.menu-btn {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  z-index: 3;
+  @include ease-out();
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    @include ease-out();
+  }
+
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(darken($primary-color, 5), 0.9);
+    list-style: none;
+    transform: translate(0, -100%);
+    @include ease-out;
+
+    &.show {
+      // slide in from top
+      transform: translate(0, 0);
+    }
+  }
+
+  &-branding {
+    background: rgba($primary-color, 0.9);
+    transform: translate(0, 100%);
+    @include ease-out;
+
+    &.show {
+      // slide in from top
+      transform: translate(0, 0);
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("/dist/img/mypic.jpeg");
+      background-size: contain;
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+
+    &.current {
+      color: $secondary-color;
+    }
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

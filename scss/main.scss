@@ -1,0 +1,197 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background();
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 5rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+  overflow: hidden;
+
+  h1 {
+    margin-top: 20vh;
+  }
+
+  .icon {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 350;
+    .icon-text {
+      margin-left: 5px;
+    }
+  }
+}
+
+#about .lg-heading,
+#work .lg-heading,
+#contact .lg-heading {
+  margin-top: 5vh;
+  margin-bottom: 2rem;
+}
+
+// About
+.about-info {
+  display: grid;
+  grid-template-areas:
+    "bioimage education education"
+    "interests cources cources";
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  font-size: 1.5rem;
+  line-height: 1;
+
+  .bio-image {
+    grid-area: bioimage;
+    border-radius: 50%;
+    border: solid 3px $secondary-color;
+    width: 350px;
+    height: 350px;
+  }
+
+  .education {
+    grid-area: education;
+    margin: 0 auto;
+
+    h4 {
+      font-weight: 450;
+      margin-bottom: 5px;
+    }
+  }
+
+  .interests {
+    grid-area: interests;
+
+    h5 {
+      font-weight: 400;
+      background: darken($primary-color, 1);
+      border-bottom: 2px solid $secondary-color;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-top: 4px;
+    }
+  }
+
+  .cources {
+    grid-area: cources;
+    margin: 0 auto;
+  }
+
+  .item {
+    background: darken($primary-color, 1);
+    border-bottom: 2px solid $secondary-color;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    h3 {
+      margin-bottom: 5px;
+      margin-top: 4px;
+    }
+  }
+
+  .text-muted {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}
+
+// Work
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+
+  img {
+    width: 100%;
+    border: 3px solid #fff;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include ease-out;
+    }
+  }
+
+  .btn-light {
+    display: block;
+    padding: 0.5rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    background: darken($primary-color, 50);
+    &:hover {
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+    }
+  }
+}
+
+// Contact
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px solid #fff;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include ease-out;
+
+    &:hover {
+      padding: 0.5rem 1rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+@import "mobile";
