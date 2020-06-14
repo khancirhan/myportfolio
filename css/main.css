@@ -1,0 +1,276 @@
+.menu-btn {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(55, 55, 55, 0.9);
+    list-style: none;
+    transform: translate(0, -100%);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate(0, 0); }
+  .menu-branding {
+    background: rgba(68, 68, 68, 0.9);
+    transform: translate(0, 100%);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate(0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("/dist/img/mypic.jpeg");
+      background-size: contain;
+      border-radius: 50%;
+      border: solid 3px #eece1a; }
+  .menu .nav-link {
+    display: block;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300; }
+    .menu .nav-link.current {
+      color: #eece1a; }
+    .menu .nav-link:hover {
+      color: #eece1a; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: url(/dist/img/laptop.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #444;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(68, 68, 68, 0.9);
+    z-index: -1; }
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 400; }
+  h1.lg-heading,
+  h2.lg-heading {
+    font-size: 5rem; }
+  h1.sm-heading,
+  h2.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(73, 73, 73, 0.5); }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+
+.text-secondary {
+  color: #eece1a; }
+
+main {
+  padding: 4rem;
+  height: 100%;
+  overflow: hidden; }
+  main h1 {
+    margin-top: 20vh; }
+  main .icon {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 350; }
+    main .icon .icon-text {
+      margin-left: 5px; }
+
+#about .lg-heading,
+#work .lg-heading,
+#contact .lg-heading {
+  margin-top: 5vh;
+  margin-bottom: 2rem; }
+
+.about-info {
+  display: grid;
+  grid-template-areas: "bioimage education education" "interests cources cources";
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  font-size: 1.5rem;
+  line-height: 1; }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    border-radius: 50%;
+    border: solid 3px #eece1a;
+    width: 350px;
+    height: 350px; }
+  .about-info .education {
+    grid-area: education;
+    margin: 0 auto; }
+    .about-info .education h4 {
+      font-weight: 450;
+      margin-bottom: 5px; }
+  .about-info .interests {
+    grid-area: interests; }
+    .about-info .interests h5 {
+      font-weight: 400;
+      background: #414141;
+      border-bottom: 2px solid #eece1a;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-top: 4px; }
+  .about-info .cources {
+    grid-area: cources;
+    margin: 0 auto; }
+  .about-info .item {
+    background: #414141;
+    border-bottom: 2px solid #eece1a;
+    padding: 10px;
+    margin-bottom: 20px; }
+    .about-info .item h3 {
+      margin-bottom: 5px;
+      margin-top: 4px; }
+  .about-info .text-muted {
+    font-weight: 300;
+    font-size: 1rem; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; }
+  .projects img {
+    width: 100%;
+    border: 3px solid #fff; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 0.5s ease-out; }
+  .projects .btn-light {
+    display: block;
+    padding: 0.5rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    background: black; }
+    .projects .btn-light:hover {
+      background: #eece1a;
+      color: #000; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px solid #fff;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
+@media screen and (min-width: 1171px) {
+  #work .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    text-align: center;
+    align-items: center;
+    line-height: 1; }
+    main .lg-heading {
+      margin-bottom: 40px;
+      font-size: 4rem; }
+    main .sm-heading {
+      margin-bottom: 20px; }
+  .menu-branding,
+  .menu-nav {
+    float: none;
+    width: 100%; }
+  .menu-nav {
+    transform: translate(-100%, 0);
+    height: 75vh; }
+  .menu-branding {
+    transform: translate(100%, 0);
+    height: 25vh; }
+    .menu-branding .portrait {
+      width: 150px;
+      height: 150px; }
+  .about-info {
+    grid-template-areas: "bioimage" "education" "cources" "interests";
+    grid-template-columns: 1fr; }
+    .about-info .bio-image {
+      margin: auto; }
+  #work .projects {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem; }
+  h1.lg-heading {
+    margin-top: 10vh; }
+  .menu-branding .portrait {
+    width: 100px;
+    height: 100px; }
+  .about-info {
+    font-size: 1.2rem; }
+    .about-info .bio-image {
+      width: 200px;
+      height: 200px;
+      margin: auto; }
+    .about-info #work .projects {
+      grid-template-columns: 1fr; }
+    .about-info .boxes div {
+      font-size: 1.2rem; } }
