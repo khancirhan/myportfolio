@@ -79,18 +79,19 @@
 
   .about-info {
     font-size: 1.2rem;
-  
+
     .bio-image {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-  }
+      width: 200px;
+      height: 200px;
+      margin: auto;
+    }
 
-  #work .projects {
-    grid-template-columns: 1fr;
-  }
+    #work .projects {
+      grid-template-columns: 1fr;
+    }
 
-  .boxes div {
-    font-size: 1.2rem;
+    .boxes div {
+      font-size: 1.2rem;
+    }
   }
 }
